@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 11, 36, 0.7);
+    z-index: -1;
+}
+
+.card-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 430px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px #00000080;
+    transition: transform 0.3s ease;
+}
+
+.card-container:hover {
+    transform: translateY(-5px);
+}
+
+.card-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.7)
+    );
+    z-index: 2;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+    z-index: 3;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.card-title {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+}
+
+/* Instagram hover effect */
+.social-icon[data-tooltip="Instagram"]:hover {
+    background-color: #E1306C;
+}
+.social-icon[data-tooltip="Instagram"]:hover svg {
+    fill: white;
+}
+
+/* GitHub hover effect */
+.social-icon[data-tooltip="GitHub"]:hover {
+    background-color: #333;
+}
+.social-icon[data-tooltip="GitHub"]:hover svg {
+    fill: white;
+}
+
+/* Twitter hover effect */
+.social-icon[data-tooltip="Twitter"]:hover {
+    background-color: #000000;
+}
+.social-icon[data-tooltip="Twitter"]:hover svg {
+    fill: white;
+}
+
+/* YouTube hover effect */
+.social-icon[data-tooltip="YouTube"]:hover {
+    background-color: #FF0000;
+}
+.social-icon[data-tooltip="YouTube"]:hover svg {
+    fill: white;
+}
+
+/* Twitch hover effect */
+.social-icon[data-tooltip="Twitch"]:hover {
+    background-color: #9146FF;
+}
+.social-icon[data-tooltip="Twitch"]:hover svg {
+    fill: white;
+}
+
+/* Roblox hover effect */
+.social-icon[data-tooltip="Roblox"]:hover {
+    background-color: #da4311;
+}
+.social-icon[data-tooltip="Roblox"]:hover svg {
+    fill: white;
+}
+
+/* Discord hover effect */
+.social-icon[data-tooltip="Discord"]:hover {
+    background-color: #7289DA;
+}
+.social-icon[data-tooltip="Discord"]:hover svg {
+    fill: white;
+}
+
+/* Spotify hover effect */
+.social-icon[data-tooltip="Spotify"]:hover {
+    background-color: #1DB954;
+}
+.social-icon[data-tooltip="Spotify"]:hover svg {
+    fill: white;
+}
+
+.social-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+} 
