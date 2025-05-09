@@ -22,3 +22,6 @@ This project showcases a sleek UI with name, title, and social media links — p
    git clone https://github.com/your-username/your-repo-name.git
 
 2. Open index.html in your browser
+
+## 💗 Credits 
+| shiv sonar | Thank you for you Help!
