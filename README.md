@@ -3,7 +3,7 @@
 A minimal and modern personal developer card built with **HTML**, **CSS**, and **JavaScript**.  
 This project showcases a sleek UI with name, title, and social media links — perfect for a quick online identity.
 
-![Preview](preview.png)
+![Preview](card.png)
 
 ## 🚀 Features
 - Clean and responsive layout
