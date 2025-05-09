@@ -50,6 +50,52 @@ body {
     transition: transform 0.3s ease;
 }
 
+@media screen and (max-width: 768px) {
+    .card-container {
+        height: 350px;
+    }
+    .card-content {
+        bottom: 20px;
+        left: 20px;
+    }
+    .card-title {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    .card-subtitle {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .social-icons {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .card-container {
+        height: 300px;
+    }
+    .card-title {
+        font-size: 28px;
+    }
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+    .social-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
 .card-container:hover {
     transform: translateY(-5px);
 }
@@ -163,14 +209,6 @@ body {
     fill: white;
 }
 
-/* Roblox hover effect */
-.social-icon[data-tooltip="Roblox"]:hover {
-    background-color: #da4311;
-}
-.social-icon[data-tooltip="Roblox"]:hover svg {
-    fill: white;
-}
-
 /* Discord hover effect */
 .social-icon[data-tooltip="Discord"]:hover {
     background-color: #7289DA;
@@ -213,4 +251,4 @@ body {
     width: 18px;
     height: 18px;
     fill: white;
-} 
+}
