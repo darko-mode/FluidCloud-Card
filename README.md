@@ -3,7 +3,7 @@
 A minimal and modern personal developer card built with **HTML**, **CSS**, and **JavaScript**.  
 This project showcases a sleek UI with name, title, and social media links — perfect for a quick online identity.
 
-![Preview](card.png)
+![Preview](bunnyg.png)
 
 ## 🚀 Features
 - Clean and responsive layout
@@ -25,3 +25,4 @@ This project showcases a sleek UI with name, title, and social media links — p
 
 ## 💗 Credits 
 **| Shiv Sonar |** Thank you for your Help!
+
