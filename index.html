@@ -12,11 +12,24 @@
     </video>
     <div class="background-overlay"></div>
     <div class="card-container">
-        <video class="card-video" autoplay muted loop playsinline>
+        <video class="card-video" autoplay playsinline muted loop>
             <source src="nash.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="overlay"></div>
+
+        <!-- Mute/Unmute toggle button -->
+        <button class="mute-toggle" type="button" aria-label="Unmute video" aria-pressed="false" data-state="muted" data-tooltip="Unmute">
+            <!-- Muted icon -->
+            <svg class="icon-muted" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 9v6h4l5 5V4L9 9H5zm12.5 3l2.5 2.5-1.5 1.5L16 13.5l-2.5 2.5-1.5-1.5L14.5 12 12 9.5l1.5-1.5L16 10.5l2.5-2.5 1.5 1.5L17.5 12z"/>
+            </svg>
+            <!-- Unmuted icon -->
+            <svg class="icon-unmuted" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 9v6h4l5 5V4L9 9H5zm7.5 3a3.5 3.5 0 002.5 3.35v-6.7A3.5 3.5 0 0012.5 12zm2.5-7v2a7 7 0 010 10v2c3.86-1.14 6.5-4.71 6.5-9s-2.64-7.86-6.5-9z"/>
+            </svg>
+        </button>
+
         <div class="card-content">
         <div class="card-subtitle">Your Creative Designer</div>
             <h1 class="card-title">Nash</h1>
@@ -61,5 +74,38 @@
     </div>
 
     <script src="script.js"></script>
+    <!-- Minimal inline script to set 10% volume and toggle mute -->
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const video = document.querySelector('.card-video');
+    const btn = document.querySelector('.mute-toggle');
+    if (!video || !btn) return;
+
+    // Start at 10% volume but keep muted for autoplay policies
+    video.volume = 0.1;
+    video.muted = true;
+
+    const updateUI = () => {
+        const muted = video.muted;
+        btn.dataset.state = muted ? 'muted' : 'unmuted';
+        btn.setAttribute('aria-pressed', muted ? 'false' : 'true');
+        btn.setAttribute('aria-label', muted ? 'Unmute video' : 'Mute video');
+        btn.setAttribute('data-tooltip', muted ? 'Unmute' : 'Mute');
+    };
+
+    updateUI();
+
+    btn.addEventListener('click', () => {
+        if (video.muted) {
+            video.muted = false;
+            video.volume = 0.1; // ensure 10% on unmute
+            video.play && video.play().catch(() => {});
+        } else {
+            video.muted = true;
+        }
+        updateUI();
+    });
+});
+</script>
 </body>
 </html>
